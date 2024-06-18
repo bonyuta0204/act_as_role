@@ -7,10 +7,9 @@ ActiveRecord::Schema.define do
       t.string :name
     end
 
-    create_table :access_control_entries, force: true do |t|
-      t.references :actor, polymorphic: true, null: false
-      t.references :resource, polymorphic: true, null: false
-      t.integer :permission, null: false
-      t.timestamps
+    create_table :user_posts, force: true do |t|
+      t.integer :user_id
+      t.integer :post_id
+      t.integer :policy_level
     end
   end

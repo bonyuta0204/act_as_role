@@ -1,6 +1,7 @@
 require "bundler/setup"
 require "act_as_role"
 require 'active_record'
+require "pry"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
