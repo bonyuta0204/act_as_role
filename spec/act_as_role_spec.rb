@@ -4,6 +4,8 @@ RSpec.describe ActAsRole do
   end
 
   it "does something useful" do
+    Post.create!
+    pp Post.all
     expect(false).to eq(true)
   end
 end

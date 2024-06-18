@@ -1,5 +1,6 @@
 require "bundler/setup"
 require "act_as_role"
+require 'active_record'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -12,3 +13,6 @@ RSpec.configure do |config|
     c.syntax = :expect
   end
 end
+
+
+Dir['./spec/support/**/*.rb'].sort.each { |f| require f }
