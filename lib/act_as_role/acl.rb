@@ -1,8 +1,8 @@
+# frozen_string_literal: true
+
 module ActAsRole
   module Acl
-
     def act_as_acl(**options)
-
       @@resource_klass = options[:resource]
       @@actor_klass = options[:actor]
 
@@ -12,6 +12,5 @@ module ActAsRole
       belongs_to :resource, class_name: @@resource_klass, foreign_key: resource_foreign_key
       belongs_to :actor, class_name: @@actor_klass, foreign_key: actor_foreign_key
     end
-
   end
 end

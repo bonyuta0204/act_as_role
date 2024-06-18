@@ -24,11 +24,9 @@ begin
   ActiveRecord::Base.establish_connection(db_name.to_sym)
   ActiveRecord::Base.connection
 rescue StandardError
-
   ActiveRecord::Base.establish_connection(config)
 end
 
-
 require "#{File.dirname(__FILE__)}/../db/schema.rb"
 
-Dir["#{File.dirname(__dir__)}/models/*.rb"].each { |f| require f }
+Dir["#{File.dirname(__dir__)}/models/*.rb"].sort.each { |f| require f }

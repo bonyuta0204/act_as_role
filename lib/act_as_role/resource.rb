@@ -1,9 +1,8 @@
+# frozen_string_literal: true
+
 module ActAsRole
   module Resource
-
-
     def act_as_role(**options)
-
       @@acl_klass = options[:acl]
       @@actor_klass = options[:actor]
 
@@ -12,8 +11,7 @@ module ActAsRole
 
     # Filter the resource by_actor
     def by_actor(actor)
-      joins(:acls).where(acls: { actor: actor})
+      joins(:acls).where(acls: { actor: actor })
     end
-
   end
 end
