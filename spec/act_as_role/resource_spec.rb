@@ -18,5 +18,12 @@ RSpec.describe ActAsRole::Resource do
       expect(result.size).to eq(1)
       expect(result.first).to eq(post)
     end
+
+    it 'can be filtered by actor_id' do
+      result = Post.by_actor_id(user.id)
+      expect(result).to be_a(ActiveRecord::Relation)
+      expect(result.size).to eq(1)
+      expect(result.first).to eq(post)
+    end
   end
 end
